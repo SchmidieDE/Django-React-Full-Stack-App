@@ -4,6 +4,8 @@ from rest_framework import generics
 from .serializers import UserSerializer, NoteSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Note
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 
 class NoteListCreate(generics.ListCreateAPIView):
@@ -34,3 +36,10 @@ class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
+
+
+class TestView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        return Response({"message": "Test endpoint working!"})
