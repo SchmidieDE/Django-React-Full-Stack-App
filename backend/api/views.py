@@ -42,4 +42,5 @@ class TestView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
+        print(request.data, "THIS IS THE BACKANED WTF")
         return Response({"message": "Test endpoint is really fucking working and i dont know why!"})
