@@ -42,4 +42,4 @@ class TestView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request):
-        return Response({"message": "Test endpoint working!"})
+        return Response({"message": "Test endpoint is really fucking working and i dont know why!"})
